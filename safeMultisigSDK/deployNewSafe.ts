@@ -28,9 +28,11 @@ async function test() {
     
     const safeAccountConfig: SafeAccountConfig = {
     owners: [
-        await owner1Signer.getAddress(),
+        "0xc1202e7d42655F23097476f6D48006fE56d38d4f",
+        "0x3b5036f77523328F80445f1855FC69667e60238f",
+        "0xe8C1B97DddF5767F549A7A7ee94F117AaAA733c4"
     ],
-    threshold: 1,
+    threshold: 2,
     }
     
     /* This Safe is tied to owner 1 because the factory was initialized with
