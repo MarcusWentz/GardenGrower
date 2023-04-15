@@ -17,7 +17,7 @@ GardenGrower Scroll Address 📜:
 
 https://blockscout.scroll.io/address/0xbFB26279a9D28CeC1F781808Da89eFbBfE2c4268/contracts#address-tabs
 
-# Safe (Gnosis) SDK :vault:
+# Safe (Gnosis) SDK 🧰
 
 Deployed a new multisignature wallet using SDK Typescript example 🔐 :
 
