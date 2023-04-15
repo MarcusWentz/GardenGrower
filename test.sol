@@ -7,14 +7,21 @@ contract Bank {
 
     address public immutable Owner;
     uint256 public test;
+    uint256 public proposalCount;
     mapping(uint256 => string) public proposalInfo;   // balances, indexed by addresses
-    mapping(uint256 => uint256) public amountForGoalEther;   // balances, indexed by addresses
+    mapping(uint256 => uint256) public proposalExpirationDeadline;   // balances, indexed by addresses
     mapping(uint256 => mapping(address => uint256)) public amountForProposal;   // balances, indexed by addresses
 
     mapping(address => uint256) public balanceOf;   // balances, indexed by addresses
 
     constructor() {
         Owner = msg.sender;
+    }
+
+    function newProposal() public {
+        proposalInfo[proposalCount] = "test"; //User would need uint256 Ether to overflow. Therefore, unchecked to 
+        proposalExpirationDeadline[proposalCount] = block.timestamp + 60; //User would need uint256 Ether to overflow. Therefore, unchecked to 
+        proposalCount++;
     }
 
     function deposit() public payable {
@@ -31,8 +38,4 @@ contract Bank {
         test = block.timestamp;
     }
 
-    function a() public {
-        if(msg.sender != Owner ) {revert notOwner(); }
-        test = block.timestamp;
-    }
 }
