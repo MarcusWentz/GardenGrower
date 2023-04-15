@@ -9,7 +9,7 @@ GardenGrower Goerli Address 🌹:
 
 https://goerli.etherscan.io/address/0x56f9269a4dd74acd461bfcde3f878e3a164a6788#code
 
-Goerli Safe Multisignature Verifier Judge Address ⚖️:
+Gnosis Safe Multisignature Verifier Judge Address Goerli ⚖️:
 
 https://goerli.etherscan.io/address/0x9F4Fc2673c4542F0cC4C5ebeEB24ebB19F8BE29f#code
 
