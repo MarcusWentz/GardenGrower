@@ -24,18 +24,21 @@ contract Bank {
         proposalCount++;
     }
 
-    function deposit() public payable {
-        unchecked{ balanceOf[msg.sender] += msg.value; } //User would need uint256 Ether to overflow. Therefore, unchecked to 
+    function depositProposal(uint256 proposalNumber) public payable {
+        //REVERT IF PROPOSAL COUNT IS SMALLER THAN INPUT NUMBER
+        unchecked{ amountForProposal[proposalNumber][msg.sender] += msg.value; } //User would need uint256 Ether to overflow. Therefore, unchecked to 
     }
 
-    function withdraw(uint256 amount) public {
-        balanceOf[msg.sender] -= amount; //Will revert with type uint256 with Solidity version 0.8.0.
+    function withdraw(uint256 proposalNumber, uint256 amount) public {
+        //REVERT IF DEADLINE IS NOT HIT
+        //REVERT IF PROPOSAL MET FLAG IS TRUE
+        amountForProposal[proposalNumber][msg.sender] -= amount;
         payable(msg.sender).transfer(amount);
     }
 
-    function ownerTest() public {
-        if(msg.sender != Owner ) {revert notOwner(); }
-        test = block.timestamp;
-    }
+    // function ownerTest() public {
+    //     if(msg.sender != Owner ) {revert notOwner(); }
+    //     test = block.timestamp;
+    // }
 
 }
