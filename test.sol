@@ -44,8 +44,9 @@ contract Bank {
         payable(msg.sender).transfer(amount); //Transfer funds out the end for users to prevent recursion and reentrancy attacks.
     }
 
-    function ownerConfirmProposalGoalMet(uint256 proposalNumber) public {
-        if(msg.sender != Owner ) {revert notOwner(); }
+    function ownerRewardProposalComplete(uint256 proposalNumber) public {
+        if( msg.sender != Owner ) {revert notOwner(); }
+        if( wasGoalMet[proposalNumber] == true ) { revert proposalMet();} 
         wasGoalMet[proposalNumber] = true;
         payable(proposalCreator[proposalNumber]).transfer(totalAmountForProposal[proposalNumber]);
     }
