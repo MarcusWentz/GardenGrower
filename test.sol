@@ -2,6 +2,9 @@
 pragma solidity 0.8.18;
 
 error notOwner();
+error proposalMet();
+error proposalNotExpired();
+error proposalDoesNotExist();
 
 contract Bank {
 
@@ -26,7 +29,7 @@ contract Bank {
     }
 
     function depositProposal(uint256 proposalNumber) public payable {
-        //REVERT IF PROPOSAL COUNT IS SMALLER THAN INPUT NUMBER
+        if(proposalNumber < proposalCount) { proposalDoesNotExist;}
         unchecked{ //User would need uint256 Ether to overflow. Therefore, unchecked to save gas.
             totalAmountForProposal[proposalNumber] += msg.value; 
             userAmountForProposal[proposalNumber][msg.sender] += msg.value; 
@@ -34,10 +37,11 @@ contract Bank {
     }
 
     function withdraw(uint256 proposalNumber, uint256 amount) public {
-        //REVERT IF DEADLINE IS NOT HIT
-        //REVERT IF PROPOSAL MET FLAG IS TRUE
+        if( block.timestamp < proposalExpirationDeadline[proposalNumber] ) {revert proposalNotExpired(); }
+        if( wasGoalMet[proposalNumber] == true ) { revert proposalMet();} 
+        totalAmountForProposal[proposalNumber] -= amount; 
         userAmountForProposal[proposalNumber][msg.sender] -= amount;
-        payable(msg.sender).transfer(amount);
+        payable(msg.sender).transfer(amount); //Transfer funds out the end for users to prevent recursion and reentrancy attacks.
     }
 
     function ownerConfirmProposalGoalMet(uint256 proposalNumber) public {
