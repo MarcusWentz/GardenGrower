@@ -18,9 +18,9 @@ contract Bank {
         Owner = msg.sender;
     }
 
-    function newProposal() public {
-        proposalInfo[proposalCount] = "test"; //User would need uint256 Ether to overflow. Therefore, unchecked to 
-        proposalExpirationDeadline[proposalCount] = block.timestamp + 60; //User would need uint256 Ether to overflow. Therefore, unchecked to 
+    function newProposal(string calldata goalString, uint256 proposalExpirationDeadlineUnix) public {
+        proposalInfo[proposalCount] = goalString; //User would need uint256 Ether to overflow. Therefore, unchecked to 
+        proposalExpirationDeadline[proposalCount] = proposalExpirationDeadlineUnix; //User would need uint256 Ether to overflow. Therefore, unchecked to 
         proposalCount++;
     }
 
