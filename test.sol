@@ -6,7 +6,7 @@ error proposalMet();
 error proposalNotExpired();
 error proposalDoesNotExist();
 
-contract Bank {
+contract GardenGrower {
 
     address public immutable Owner;//User would need uint256 Ether to overflow. Therefore, unchecked to 
     uint256 public proposalCount;
