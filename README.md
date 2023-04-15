@@ -25,8 +25,8 @@ https://github.com/MarcusWentz/GardenGrower/blob/main/safeMultisigSDK/deployNewS
 
 Create transactions in transaction queue ✉️ : 
 
-https://github.com/MarcusWentz/GardenGrower/tree/main/safeMultisigSDK
+https://github.com/MarcusWentz/GardenGrower/blob/main/safeMultisigSDK/deployNewSafe.ts
 
-SDK Reference:
+SDK Reference 📖:
 
 https://docs.safe.global/learn/safe-core/safe-core-account-abstraction-sdk/protocol-kit
