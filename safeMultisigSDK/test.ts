@@ -20,6 +20,6 @@ test()
 
 async function test() {
     
-  const safeFactory = await SafeFactory.create({ ethAdapter: ethAdapterOwner1, safeAddress })
+  const safeFactory = await SafeFactory.create({ ethAdapter: ethAdapterOwner1 })
 
 }
