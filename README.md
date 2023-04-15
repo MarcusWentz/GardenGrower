@@ -21,7 +21,7 @@ https://blockscout.scroll.io/address/0xbFB26279a9D28CeC1F781808Da89eFbBfE2c4268/
 
 Deployed a new multisignature wallet using SDK Typescript example 🔐 :
 
-https://github.com/MarcusWentz/GardenGrower/tree/main/safeMultisigSDK
+https://github.com/MarcusWentz/GardenGrower/blob/main/safeMultisigSDK/deployNewSafe.ts
 
 Create transactions in transaction queue ✉️ : 
 
