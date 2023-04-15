@@ -7,12 +7,15 @@ contract Bank {
 
     address public immutable Owner;
     uint256 public test;
+    mapping(uint256 => string) public proposalInfo;   // balances, indexed by addresses
+    mapping(uint256 => uint256) public amountForGoalEther;   // balances, indexed by addresses
+    mapping(uint256 => mapping(address => uint256)) public amountForProposal;   // balances, indexed by addresses
+
+    mapping(address => uint256) public balanceOf;   // balances, indexed by addresses
 
     constructor() {
         Owner = msg.sender;
     }
-
-    mapping(address => uint256) public balanceOf;   // balances, indexed by addresses
 
     function deposit() public payable {
         unchecked{ balanceOf[msg.sender] += msg.value; } //User would need uint256 Ether to overflow. Therefore, unchecked to 
@@ -24,6 +27,11 @@ contract Bank {
     }
 
     function ownerTest() public {
+        if(msg.sender != Owner ) {revert notOwner(); }
+        test = block.timestamp;
+    }
+
+    function a() public {
         if(msg.sender != Owner ) {revert notOwner(); }
         test = block.timestamp;
     }
