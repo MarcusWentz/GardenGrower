@@ -25,7 +25,7 @@ https://github.com/MarcusWentz/GardenGrower/blob/main/safeMultisigSDK/deployNewS
 
 Create transactions in transaction queue ✉️ : 
 
-https://github.com/MarcusWentz/GardenGrower/blob/main/safeMultisigSDK/deployNewSafe.ts
+https://github.com/MarcusWentz/GardenGrower/blob/main/safeMultisigSDK/createNewTransactionInQueue.ts
 
 Reference 📖:
 
