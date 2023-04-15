@@ -32,7 +32,7 @@ contract GardenGrower {
     }
 
     function sponsorDepositProposal(uint256 proposalNumber) public payable {
-        if(proposalNumber < proposalCount) { revert proposalDoesNotExist();}
+        if(proposalCount < proposalNumber) { revert proposalDoesNotExist();}
         if(wasGoalMet[proposalNumber] == true ) { revert proposalMet();} 
         unchecked{ //User would need uint256 Ether to overflow. Therefore, unchecked to save gas.
             totalAmountForProposal[proposalNumber] += msg.value; 
