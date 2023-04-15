@@ -17,7 +17,7 @@ GardenGrower Scroll Address 📜:
 
 https://blockscout.scroll.io/address/0xbFB26279a9D28CeC1F781808Da89eFbBfE2c4268/contracts#address-tabs
 
-# Safe (Gnosis) SDK 🧰
+# Safe (Gnosis) Protocol Kit SDK 🧰
 
 Deployed a new multisignature wallet using SDK Typescript example 🔐 :
 
@@ -27,6 +27,6 @@ Create transactions in transaction queue ✉️ :
 
 https://github.com/MarcusWentz/GardenGrower/blob/main/safeMultisigSDK/deployNewSafe.ts
 
-SDK Reference 📖:
+Reference 📖:
 
 https://docs.safe.global/learn/safe-core/safe-core-account-abstraction-sdk/protocol-kit
