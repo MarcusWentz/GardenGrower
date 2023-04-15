@@ -1,4 +1,3 @@
-// NEED TO HAVE "package.json" file with "type": "module" set for import syntax.
 import { ethers } from 'ethers'
 import { EthersAdapter } from '@safe-global/protocol-kit'
 import { SafeFactory } from '@safe-global/protocol-kit'
