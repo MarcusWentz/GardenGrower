@@ -6,12 +6,11 @@ contract Bank {
     mapping(address => uint256) public balanceOf;   // balances, indexed by addresses
 
     function deposit() public payable {
-        balanceOf[msg.sender] += msg.value;     // adjust the account's balance
+        unchecked{ balanceOf[msg.sender] += msg.value; } //User would need uint256 Ether to overflow. Therefore, unchecked to 
     }
 
     function withdraw(uint256 amount) public {
-        require(amount <= balanceOf[msg.sender]);
-        balanceOf[msg.sender] -= amount;
+        balanceOf[msg.sender] -= amount; //Will revert with type uint256 with Solidity version 0.8.0.
         payable(msg.sender).transfer(amount);
     }
 }
