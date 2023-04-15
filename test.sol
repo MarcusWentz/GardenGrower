@@ -21,14 +21,14 @@ contract Bank {
         Owner = msg.sender;
     }
 
-    function newProposal(string calldata goalString, uint256 proposalExpirationDeadlineUnix) public {
+    function userNewProposal(string calldata goalString, uint256 proposalExpirationDeadlineUnix) public {
         proposalCreator[proposalCount] = msg.sender; //User would need uint256 Ether to overflow. Therefore, unchecked to 
         proposalInfo[proposalCount] = goalString; //User would need uint256 Ether to overflow. Therefore, unchecked to 
         proposalExpirationDeadline[proposalCount] = proposalExpirationDeadlineUnix; //User would need uint256 Ether to overflow. Therefore, unchecked to 
         proposalCount++;
     }
 
-    function depositProposal(uint256 proposalNumber) public payable {
+    function sponsorDepositProposal(uint256 proposalNumber) public payable {
         if(proposalNumber < proposalCount) { proposalDoesNotExist;}
         unchecked{ //User would need uint256 Ether to overflow. Therefore, unchecked to save gas.
             totalAmountForProposal[proposalNumber] += msg.value; 
@@ -36,7 +36,7 @@ contract Bank {
         } 
     }
 
-    function withdraw(uint256 proposalNumber, uint256 amount) public {
+    function sponsorWithdrawlAfterUnlock(uint256 proposalNumber, uint256 amount) public {
         if( block.timestamp < proposalExpirationDeadline[proposalNumber] ) {revert proposalNotExpired(); }
         if( wasGoalMet[proposalNumber] == true ) { revert proposalMet();} 
         totalAmountForProposal[proposalNumber] -= amount; 
