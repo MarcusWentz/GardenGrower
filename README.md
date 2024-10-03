@@ -5,13 +5,13 @@ Users lock ETH into the contract and can refund their ETH if a proposal has expi
 
 # Deployments 🏛️
 
-GardenGrower Goerli Address 🌹:
+GardenGrower Base Sepolia Address 🌹:
 
-https://goerli.etherscan.io/address/0x56f9269a4dd74acd461bfcde3f878e3a164a6788#code
+https://sepolia.basescan.org/address/0x3db752b6fc423a5fe25443dab1f47d0fb34a586e
 
-Safe (Gnosis) Multisignature Verifier Judge Address Goerli ⚖️:
+Safe (Gnosis) Multisignature Verifier Judge Address Base Sepolia ⚖️:
 
-https://goerli.etherscan.io/address/0x9F4Fc2673c4542F0cC4C5ebeEB24ebB19F8BE29f#code
+https://sepolia.basescan.org/address/0x7146ae1af613f50a06703ee365e6df4aab765eba
 
 GardenGrower Scroll Address 📜:
 
