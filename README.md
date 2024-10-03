@@ -29,4 +29,4 @@ https://github.com/MarcusWentz/GardenGrower/blob/main/safeMultisigSDK/createNewT
 
 Reference 📖:
 
-https://docs.safe.global/learn/safe-core/safe-core-account-abstraction-sdk/protocol-kit
+https://docs.safe.global/sdk/protocol-kit
